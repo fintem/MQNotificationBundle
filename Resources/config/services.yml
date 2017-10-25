@@ -1,0 +1,23 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Fintem\MQNotificationBundle\:
+        resource: '../../*'
+        exclude: '../../{Constants,Resources,Event,Exception}'
+
+    OldSound\RabbitMqBundle\RabbitMq\ProducerInterface: '@old_sound_rabbit_mq.notify_producer'
+
+    Fintem\MQNotificationBundle\Notifier\Notifier: ~
+    Fintem\MQNotificationBundle\Notifier\NotifierInterface: '@Fintem\MQNotificationBundle\Notifier\Notifier'
+
+# Event listeners
+    Fintem\MQNotificationBundle\EventListener\NotifyListener:
+        tags:
+            - { name: kernel.event_listener, event: mq_notification.notify, method: notify }
+            - { name: kernel.event_listener, event: kernel.terminate, method: processSpool }
+            - { name: kernel.event_listener, event: kernel.exception, method: processSpool }
+            - { name: kernel.event_listener, event: console.terminate, method: processSpool }
+            - { name: kernel.event_listener, event: console.error, method: processSpool }
