@@ -1,4 +1,4 @@
-# MQNotificationBundle [![Build Status](https://travis-ci.org/fintem/MQNotificationBundle.svg?branch=master)](https://travis-ci.org/fintem/MQNotificationBundle) [![Coverage Status](https://coveralls.io/github/fintem/MQNotificationBundle/badge.svg?branch=master)](https://coveralls.io/github/fintem/MQNotificationBundle?branch=master)
+# MQNotificationBundle [![Build Status](https://travis-ci.org/fintem/MQNotificationBundle.svg?branch=master)](https://travis-ci.org/fintem/MQNotificationBundle) [![Coverage Status](https://coveralls.io/repos/github/fintem/MQNotificationBundle/badge.svg?branch=master)](https://coveralls.io/github/fintem/MQNotificationBundle?branch=master)
 
 Installation
 ============
