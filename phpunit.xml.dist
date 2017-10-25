@@ -2,7 +2,7 @@
 
 <phpunit colors="true" bootstrap="vendor/autoload.php">
     <testsuites>
-        <testsuite name="SwiftmailerBundle for the Symfony Framework">
+        <testsuite name="MQNotificationBundle test suite">
             <directory>./Tests</directory>
         </testsuite>
     </testsuites>
@@ -17,4 +17,8 @@
             </exclude>
         </whitelist>
     </filter>
+
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
 </phpunit>
