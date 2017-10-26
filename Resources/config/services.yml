@@ -6,7 +6,7 @@ services:
 
     Fintem\MQNotificationBundle\:
         resource: '../../*'
-        exclude: '../../{Constants,Resources,Event,Exception}'
+        exclude: '../../{Constants,Resources,Event,Exception,Tests}'
 
     OldSound\RabbitMqBundle\RabbitMq\ProducerInterface: '@old_sound_rabbit_mq.notify_producer'
 
