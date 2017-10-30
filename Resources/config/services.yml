@@ -6,12 +6,14 @@ services:
 
     Fintem\MQNotificationBundle\:
         resource: '../../*'
-        exclude: '../../{Constants,Resources,Event,Exception,Tests}'
+        exclude: '../../{Constants,Resources,Event,Exception,Tests,vendor}'
 
     OldSound\RabbitMqBundle\RabbitMq\ProducerInterface: '@old_sound_rabbit_mq.notify_producer'
 
     Fintem\MQNotificationBundle\Notifier\Notifier: ~
     Fintem\MQNotificationBundle\Notifier\NotifierInterface: '@Fintem\MQNotificationBundle\Notifier\Notifier'
+
+    Symfony\Component\EventDispatcher\EventDispatcherInterface: '@Fintem\MQNotificationBundle\EventDispatcher'
 
 # Event listeners
     Fintem\MQNotificationBundle\EventListener\NotifyListener:

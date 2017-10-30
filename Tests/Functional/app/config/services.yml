@@ -1,0 +1,7 @@
+services:
+    mq_notification.event_dispatcher: '@Fintem\MQNotificationBundle\EventDispatcher'
+
+    event_subscriber.notification:
+        class: Fintem\MQNotificationBundle\Functional\app\src\EventSubscriber\TestNotificationEventSubscriber
+        tags:
+            - { name: mq_notification.event_subscriber }
