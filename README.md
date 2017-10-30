@@ -86,3 +86,5 @@ class NotificationSubscriber implements EventSubscriberInterface
     }
 }
 ```
+
+##### Register listener/subscriber in service container and tag them with the ``mq_notification.event_listener`` and ``mq_notification.event_subscriber`` tags
