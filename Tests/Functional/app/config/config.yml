@@ -1,0 +1,14 @@
+imports:
+    - { resource: services.yml }
+
+parameters:
+    kernel.secret: asfds
+    kernel.charset: utf8
+
+old_sound_rabbit_mq:
+    connections:
+        default: ~
+
+mq_notification:
+    mq_connection_name: default
+    service_name: test

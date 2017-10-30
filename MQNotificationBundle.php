@@ -3,6 +3,7 @@
 namespace Fintem\MQNotificationBundle;
 
 use Fintem\MQNotificationBundle\DependencyInjection\Compiler\MessageDataTransformerPass;
+use Fintem\MQNotificationBundle\DependencyInjection\Compiler\RegisterListenersPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -17,7 +18,8 @@ class MQNotificationBundle extends Bundle
     public function build(ContainerBuilder $container)
     {
         parent::build($container);
-
-        $container->addCompilerPass(new MessageDataTransformerPass());
+        $container
+            ->addCompilerPass(new MessageDataTransformerPass())
+            ->addCompilerPass(new RegisterListenersPass());
     }
 }
