@@ -25,6 +25,9 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('service_name')
                     ->isRequired()
                 ->end()
+                ->scalarNode('exchange_name')
+                    ->defaultValue('notifications')
+                ->end()
         ;
 
         return $treeBuilder;

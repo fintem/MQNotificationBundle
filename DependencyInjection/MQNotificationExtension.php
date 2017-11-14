@@ -40,7 +40,7 @@ class MQNotificationExtension extends Extension implements PrependExtensionInter
         $configs = $container->getExtensionConfig('mq_notification');
         $config = $this->processConfiguration(new Configuration(), $configs);
 
-        $exchangeOptions = ['name' => 'notifications', 'type' => 'fanout'];
+        $exchangeOptions = ['name' => $config['exchange_name'], 'type' => 'fanout'];
         $config = [
             'producers' => [
                 'notify' => [
