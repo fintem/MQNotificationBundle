@@ -30,6 +30,17 @@ class ConfigurationTest extends UnitTestCase
     }
 
     /**
+     * @test
+     */
+    public function defaultExchangeName()
+    {
+        $config = $this
+            ->processConfiguration(['mq_notification' => ['mq_connection_name' => '', 'service_name' => '']]);
+        $this->assertArrayHasKey('exchange_name', $config);
+        $this->assertEquals('notifications', $config['exchange_name']);
+    }
+
+    /**
      * @param array $config
      *
      * @return array
