@@ -32,8 +32,7 @@ class MQNotificationExtension extends Extension implements PrependExtensionInter
      */
     public function prepend(ContainerBuilder $container)
     {
-        $bundles = $container->getParameter('kernel.bundles');
-        if (!isset($bundles['OldSoundRabbitMqBundle'])) {
+        if (!$container->hasExtension('old_sound_rabbit_mq')) {
             throw new BundleNotFoundException('Install and enable OldSoundRabbitMqBundle.');
         }
 
@@ -52,6 +51,7 @@ class MQNotificationExtension extends Extension implements PrependExtensionInter
                 'notification' => [
                     'connection' => $config['mq_connection_name'],
                     'queue_options' => ['name' => $config['service_name']],
+                    'qos_options' => $config['qos_options'],
                     'callback' => NotificationConsumer::class,
                     'exchange_options' => $exchangeOptions,
                 ],
