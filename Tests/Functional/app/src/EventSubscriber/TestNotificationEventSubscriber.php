@@ -1,6 +1,6 @@
 <?php
 
-namespace Fintem\MQNotificationBundle\Functional\app\src\EventSubscriber;
+namespace Fintem\MQNotificationBundle\Tests\Functional\app\src\EventSubscriber;
 
 use Fintem\MQNotificationBundle\Event\NotificationReceivedEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

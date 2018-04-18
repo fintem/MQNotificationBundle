@@ -3,7 +3,7 @@
 namespace Fintem\MQNotificationBundle\Tests\Functional;
 
 use Fintem\MQNotificationBundle\EventDispatcher;
-use Fintem\MQNotificationBundle\Functional\app\src\EventSubscriber\TestNotificationEventSubscriber;
+use Fintem\MQNotificationBundle\Tests\Functional\app\src\EventSubscriber\TestNotificationEventSubscriber;
 
 /**
  * Class RegisterListenersPassTest.

@@ -23,14 +23,7 @@
   "autoload": {
     "psr-4": {
       "Fintem\\MQNotificationBundle\\": ""
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Fintem\\MQNotificationBundle\\": "Tests"
-    }
-  },
-  "config": {
-    "bin-dir": "bin"
+    },
+    "exclude-from-classmap": ["/Tests/"]
   }
 }
