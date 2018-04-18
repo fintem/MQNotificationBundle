@@ -1,5 +1,7 @@
 services:
-    mq_notification.event_dispatcher: '@Fintem\MQNotificationBundle\EventDispatcher'
+    mq_notification.event_dispatcher:
+        alias: Fintem\MQNotificationBundle\EventDispatcher
+        public: true
 
     event_subscriber.notification:
         class: Fintem\MQNotificationBundle\Tests\Functional\app\src\EventSubscriber\TestNotificationEventSubscriber
