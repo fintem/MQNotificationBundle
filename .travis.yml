@@ -7,7 +7,6 @@ before_script:
     - composer install
 script:
     - mkdir -p build/logs
-    - vendor/bin/phpunit -c phpunit.xml.dist Tests/Unit --coverage-clover build/logs/clover.xml
-    - vendor/bin/phpunit -c phpunit.xml.dist Tests/Functional
+    - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 after_success:
-  - travis_retry php bin/coveralls
+  - travis_retry php vendor/bin/coveralls
