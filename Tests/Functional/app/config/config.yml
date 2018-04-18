@@ -13,3 +13,5 @@ mq_notification:
     mq_connection_name: default
     service_name: test
     exchange_name: test_exchange
+    qos_options:
+        prefetch_size: 1

@@ -28,6 +28,20 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('exchange_name')
                     ->defaultValue('notifications')
                 ->end()
+                ->arrayNode('qos_options')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('prefetch_size')
+                            ->defaultValue(0)
+                        ->end()
+                        ->scalarNode('prefetch_count')
+                            ->defaultValue(1)
+                        ->end()
+                        ->scalarNode('global')
+                            ->defaultFalse()
+                        ->end()
+                    ->end()
+                ->end()
         ;
 
         return $treeBuilder;
